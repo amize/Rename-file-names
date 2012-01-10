@@ -1,0 +1,1 @@
+num=1;digits=4;prefix="img_";ext=".jpg";for fn in `ls -1F|grep -v /|sort`; do num2=$(echo -n "0000$num"|cut -c$[`echo -n "0000$num"|wc -c`-$digits+1]-);mv $fn "$prefix$num2$ext";num=$[$num+1]; done;
